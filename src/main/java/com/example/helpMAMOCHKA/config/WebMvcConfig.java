@@ -26,7 +26,7 @@ public class WebMvcConfig {
                 .authorizeHttpRequests()
                 /*.requestMatchers("/user/registration").hasAuthority("USER")
                 .requestMatchers("/user/**").hasAuthority("ADMIN")*/
-                .requestMatchers("/security/**").permitAll()
+                .requestMatchers("/**", "/security/**").permitAll()
                 .requestMatchers("/user/**").permitAll()
                 .anyRequest().authenticated()
                 .and().build();

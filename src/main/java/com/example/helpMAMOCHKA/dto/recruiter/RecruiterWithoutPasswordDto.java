@@ -1,0 +1,33 @@
+package com.example.helpMAMOCHKA.dto.recruiter;
+
+import com.example.helpMAMOCHKA.enums.Role;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
+@Builder
+@EqualsAndHashCode
+public class RecruiterWithoutPasswordDto {
+    private Long id;
+
+    private String fullName;
+
+    private String position;
+
+    private String company;
+
+    private boolean active;
+
+    private String number;
+
+    private String telegram;
+
+    private Role role;
+
+    private LocalDateTime dateOfCreated;
+}

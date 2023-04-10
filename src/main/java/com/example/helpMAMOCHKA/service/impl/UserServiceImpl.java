@@ -1,7 +1,7 @@
 package com.example.helpMAMOCHKA.service.impl;
 
 import com.example.helpMAMOCHKA.dto.user.UserDto;
-import com.example.helpMAMOCHKA.dto.user.UserDtoWithoutPassword;
+import com.example.helpMAMOCHKA.dto.user.UserWithoutPasswordDto;
 import com.example.helpMAMOCHKA.entity.User;
 import com.example.helpMAMOCHKA.repository.UserRepo;
 import com.example.helpMAMOCHKA.service.UserService;
@@ -29,21 +29,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDtoWithoutPassword findById(Long id) {
+    public UserWithoutPasswordDto findById(Long id) {
         User user = userRepo.findById(id)
                 .orElseThrow();
-        return modelMapper.map(user, UserDtoWithoutPassword.class);
+        return modelMapper.map(user, UserWithoutPasswordDto.class);
     }
 
     @Override
     public void deleteById(Long id) {
-        UserDtoWithoutPassword userDto = findById(id);
+        UserWithoutPasswordDto userDto = findById(id);
         userRepo.delete(modelMapper.map(userDto, User.class));
     }
 
     @Override
-    public List<UserDtoWithoutPassword> getAllUsers() {
-        return modelMapper.map(userRepo.findAll(), new TypeToken<List<UserDtoWithoutPassword>>(){}.getType());
+    public List<UserWithoutPasswordDto> getAllUsers() {
+        return modelMapper.map(userRepo.findAll(), new TypeToken<List<UserWithoutPasswordDto>>(){}.getType());
     }
 
     @Override

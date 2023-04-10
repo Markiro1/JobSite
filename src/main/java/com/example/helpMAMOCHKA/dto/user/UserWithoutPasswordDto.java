@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 @EqualsAndHashCode
-public class UserDtoWithoutPassword {
+public class UserWithoutPasswordDto {
     private Long id;
 
     private String nickname;

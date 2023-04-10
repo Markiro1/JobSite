@@ -1,7 +1,8 @@
 package com.example.helpMAMOCHKA.controller;
 
-import com.example.helpMAMOCHKA.dto.user.UserDtoWithoutPassword;
+import com.example.helpMAMOCHKA.dto.user.UserWithoutPasswordDto;
 import com.example.helpMAMOCHKA.service.UserService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,13 @@ import java.util.List;
 @RequestMapping("/user")
 @AllArgsConstructor
 @Validated
+
 public class UserController {
 
     private final UserService userService;
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<UserDtoWithoutPassword> findById(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<UserWithoutPasswordDto> findById(@PathVariable(value = "id") Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userService.findById(id));
     }
 
@@ -30,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<UserDtoWithoutPassword>> getAllUsers() {
+    public ResponseEntity<List<UserWithoutPasswordDto>> getAllUsers() {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUsers());
     }
 }
