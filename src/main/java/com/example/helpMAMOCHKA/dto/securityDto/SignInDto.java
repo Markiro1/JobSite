@@ -1,5 +1,6 @@
 package com.example.helpMAMOCHKA.dto.securityDto;
 
+import com.example.helpMAMOCHKA.enums.Role;
 import lombok.*;
 
 @Getter
@@ -10,4 +11,6 @@ import lombok.*;
 public class SignInDto {
     private String email;
     private String password;
+
+    private Role role;
 }

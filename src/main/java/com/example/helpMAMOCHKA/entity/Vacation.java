@@ -4,6 +4,8 @@ import com.example.helpMAMOCHKA.enums.*;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -49,4 +51,10 @@ public class Vacation {
     @Column(nullable = false)
     private Specialization specialization;
 
+    @OneToMany(mappedBy = "vacation", cascade = CascadeType.PERSIST)
+    private List<FeedBack> feedBacks;
+
+    @ManyToOne
+    @JoinColumn(name = "recruiter_id")
+    private Recruiter recruiter;
 }

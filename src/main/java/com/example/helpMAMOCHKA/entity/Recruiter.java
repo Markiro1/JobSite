@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -48,4 +49,7 @@ public class Recruiter {
     private void init() {
         dateOfCreated = LocalDateTime.now();
     }
+
+    @OneToMany(mappedBy = "recruiter", cascade = CascadeType.PERSIST)
+    private List<Vacation> vacation;
 }

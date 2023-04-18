@@ -8,4 +8,5 @@ import java.util.List;
 public interface RecruiterRepo extends JpaRepository<Recruiter, Long> {
     Recruiter findByEmail(String email);
     List<Recruiter> findAll();
+    Recruiter findByFullName(String username);
 }

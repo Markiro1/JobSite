@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -80,4 +81,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return active;
     }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+    private List<FeedBack> feedBacks;
 }

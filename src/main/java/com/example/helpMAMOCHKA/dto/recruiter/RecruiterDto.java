@@ -15,13 +15,13 @@ public class RecruiterDto {
 
     private Long id;
 
-    private String firstName;
-
-    private String lastName;
+    private String fullName;
 
     private String position;
 
     private String company;
+
+    private String email;
 
     private boolean active;
 
