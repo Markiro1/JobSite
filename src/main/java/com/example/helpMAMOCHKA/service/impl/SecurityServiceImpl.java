@@ -19,8 +19,8 @@ import com.example.helpMAMOCHKA.repository.UserRepo;
 import com.example.helpMAMOCHKA.service.RecruiterService;
 import com.example.helpMAMOCHKA.service.SecurityService;
 import com.example.helpMAMOCHKA.service.UserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -29,6 +29,7 @@ import java.time.LocalDateTime;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class SecurityServiceImpl implements SecurityService {
 
     private final PasswordEncoder passwordEncoder;
@@ -36,17 +37,6 @@ public class SecurityServiceImpl implements SecurityService {
     private final UserRepo userRepo;
     private final RecruiterRepo recruiterRepo;
     private final RecruiterService recruiterService;
-
-
-    public SecurityServiceImpl(@Autowired PasswordEncoder passwordEncoder, @Autowired UserService userService,
-                               @Autowired UserRepo userRepo,
-                               @Autowired RecruiterRepo recruiterRepo, @Autowired RecruiterService recruiterService) {
-        this.userService = userService;
-        this.userRepo = userRepo;
-        this.passwordEncoder = passwordEncoder;
-        this.recruiterRepo = recruiterRepo;
-        this.recruiterService = recruiterService;
-    }
 
     @Override
     public SuccessSignUpDto signUp(SignUpDto dto) {

@@ -34,11 +34,9 @@ public class WebMvcConfig {
                 .disable()
                 .authorizeRequests()
                 .requestMatchers("/vacation/**").hasRole("RECRUITER")
-                .requestMatchers("/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic();
-
 
         return http.build();
     }
