@@ -1,7 +1,12 @@
 package com.example.helpMAMOCHKA.dto.securityDto;
 
 import com.example.helpMAMOCHKA.enums.Role;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
 @Getter
 @Setter

@@ -29,7 +29,7 @@ public class RecruiterServiceImpl implements RecruiterService {
 
     @Override
     public RecruiterDto findByEmail(String email) {
-        Optional<Recruiter> optionalRecruiter = Optional.ofNullable(recruiterRepo.findByEmail(email));
+        Optional<Recruiter> optionalRecruiter = recruiterRepo.findByEmail(email);
         return optionalRecruiter.isEmpty() ? null : modelMapper.map(optionalRecruiter.get(), RecruiterDto.class);
     }
 

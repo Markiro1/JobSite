@@ -37,9 +37,10 @@ public class SecurityServiceImpl implements SecurityService {
     private final RecruiterRepo recruiterRepo;
     private final RecruiterService recruiterService;
 
-    @Autowired
-    public SecurityServiceImpl(PasswordEncoder passwordEncoder, UserService userService, UserRepo userRepo,
-                               RecruiterRepo recruiterRepo, RecruiterService recruiterService) {
+
+    public SecurityServiceImpl(@Autowired PasswordEncoder passwordEncoder, @Autowired UserService userService,
+                               @Autowired UserRepo userRepo,
+                               @Autowired RecruiterRepo recruiterRepo, @Autowired RecruiterService recruiterService) {
         this.userService = userService;
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
@@ -90,27 +91,35 @@ public class SecurityServiceImpl implements SecurityService {
 
     private User createNewUser(SignUpDto dto) {
         String encodedPassword = passwordEncoder.encode(dto.getPassword());
-        return User.builder()
+
+        User user = User.builder()
                 .nickname(dto.getNickname())
                 .firstName(dto.getFirstName())
-                .email(dto.getEmail())
-                .password(encodedPassword)
                 .dateOfCreated(LocalDateTime.now())
-                .role(dto.getRole())
                 .active(true)
                 .build();
+
+        user.setEmail(dto.getEmail());
+        user.setPassword(encodedPassword);
+        user.setRole(dto.getRole());
+
+        return user;
     }
 
     private Recruiter createNewRecruiter(SignUpDto dto) {
         String encodedPassword = passwordEncoder.encode(dto.getPassword());
-        return Recruiter.builder()
+
+        Recruiter recruiter = Recruiter.builder()
                 .fullName(dto.getFirstName())
-                .email(dto.getEmail())
-                .password(encodedPassword)
                 .dateOfCreated(LocalDateTime.now())
-                .role(dto.getRole())
                 .active(true)
                 .build();
+
+        recruiter.setEmail(dto.getEmail());
+        recruiter.setPassword(encodedPassword);
+        recruiter.setRole(dto.getRole());
+
+        return recruiter;
     }
 
     private SuccessSignInDto signInAsUser(SignInDto dto) {

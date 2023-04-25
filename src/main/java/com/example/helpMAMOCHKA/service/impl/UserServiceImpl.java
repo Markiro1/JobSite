@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto findByEmail(String email) {
-        Optional<User> optionalUser = Optional.ofNullable(userRepo.findByEmail(email));
+        Optional<User> optionalUser = userRepo.findByEmail(email);
         return optionalUser.isEmpty() ? null : modelMapper.map(optionalUser.get(), UserDto.class);
     }
 }

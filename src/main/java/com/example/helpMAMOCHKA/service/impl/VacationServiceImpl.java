@@ -10,12 +10,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -27,12 +26,20 @@ public class VacationServiceImpl implements VacationService {
 
     @Override
     public Vacation save(VacationDto vacationDto) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Recruiter recruiter = recruiterRepo.findByFullName(auth.getName());
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        Recruiter recruiter = recruiterRepo.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Recruiter not found for email: " + email));
+
         Vacation vacation = createVacation(vacationDto);
+        vacation.setRecruiter(recruiter);
+
         Vacation savedVacation = vacationRepo.save(vacation);
         vacation.setId(savedVacation.getId());
-        vacation.setRecruiter(recruiter);
+
+        if (recruiter != null) {
+            recruiter.getVacation().add(vacation);
+        }
+        recruiterRepo.save(recruiter);
 
         return vacation;
     }
