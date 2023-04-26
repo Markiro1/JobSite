@@ -36,10 +36,9 @@ public class VacationDto {
 
     private Experience experience;
 
-    private English english;
+    private English english_level;
 
     private Specialization specialization;
 
     private List<FeedBack> feedBacks;
-
 }

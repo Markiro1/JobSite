@@ -1,11 +1,6 @@
 package com.example.helpMAMOCHKA.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Table;
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrePersist;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -44,4 +39,6 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
     private List<FeedBack> feedBacks;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.PERSIST)
+    private Profile profile;
 }

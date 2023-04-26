@@ -61,7 +61,7 @@ public class Vacation {
 
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
-    private English english;
+    private English english_level;
 
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)

@@ -38,8 +38,8 @@ public class VacationServiceImpl implements VacationService {
 
         if (recruiter != null) {
             recruiter.getVacation().add(vacation);
+            recruiterRepo.save(recruiter);
         }
-        recruiterRepo.save(recruiter);
 
         return vacation;
     }
@@ -71,7 +71,7 @@ public class VacationServiceImpl implements VacationService {
                 .remote(dto.getRemote())
                 .country(dto.getCountry())
                 .experience(dto.getExperience())
-                .english(dto.getEnglish())
+                .english_level(dto.getEnglish_level())
                 .specialization(dto.getSpecialization())
                 .feedBacks(dto.getFeedBacks())
                 .build();
