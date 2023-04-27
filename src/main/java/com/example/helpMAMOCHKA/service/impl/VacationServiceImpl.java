@@ -73,7 +73,7 @@ public class VacationServiceImpl implements VacationService {
                 .experience(dto.getExperience())
                 .english_level(dto.getEnglish_level())
                 .specialization(dto.getSpecialization())
-                .feedBacks(dto.getFeedBacks())
+                .responses(dto.getResponses())
                 .build();
     }
 

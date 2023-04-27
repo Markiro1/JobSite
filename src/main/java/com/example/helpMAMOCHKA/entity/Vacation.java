@@ -68,7 +68,7 @@ public class Vacation {
     private Specialization specialization;
 
     @OneToMany(mappedBy = "vacation", cascade = CascadeType.PERSIST)
-    private List<FeedBack> feedBacks;
+    private List<Response> responses;
 
     @JsonIgnore
     @ManyToOne

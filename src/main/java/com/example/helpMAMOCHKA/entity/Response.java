@@ -1,5 +1,6 @@
 package com.example.helpMAMOCHKA.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.JoinColumn;
@@ -21,9 +22,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Builder
-@Table(name = "feedback")
+@Table(name = "response")
 @Entity
-public class FeedBack {
+public class Response {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,10 +33,12 @@ public class FeedBack {
 
     private LocalDateTime dateOfCreated;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "vacation_id")
     private Vacation vacation;

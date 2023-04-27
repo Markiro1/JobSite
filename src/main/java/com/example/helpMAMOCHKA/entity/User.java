@@ -37,7 +37,7 @@ public class User extends BaseEntity {
     }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
-    private List<FeedBack> feedBacks;
+    private List<Response> responses;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.PERSIST)
     private Profile profile;

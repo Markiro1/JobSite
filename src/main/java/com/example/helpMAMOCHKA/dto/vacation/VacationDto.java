@@ -1,6 +1,6 @@
 package com.example.helpMAMOCHKA.dto.vacation;
 
-import com.example.helpMAMOCHKA.entity.FeedBack;
+import com.example.helpMAMOCHKA.entity.Response;
 import com.example.helpMAMOCHKA.enums.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,5 +40,5 @@ public class VacationDto {
 
     private Specialization specialization;
 
-    private List<FeedBack> feedBacks;
+    private List<Response> responses;
 }

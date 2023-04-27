@@ -41,6 +41,7 @@ public class WebMvcConfig {
                 .authorizeRequests()
                 .requestMatchers("/vacation/**").hasRole("RECRUITER")
                 .requestMatchers("/profile/**").hasRole("USER")
+                .requestMatchers("/responses/**").hasRole("USER")
                 .anyRequest().permitAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
