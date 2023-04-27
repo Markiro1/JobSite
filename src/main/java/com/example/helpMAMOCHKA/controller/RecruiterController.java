@@ -23,13 +23,13 @@ public class RecruiterController {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<Object> deleteUserById(@PathVariable(value = "id") Long userId) {
+    public ResponseEntity<Object> deleteRecruiterById(@PathVariable(value = "id") Long userId) {
         recruiterService.deleteById(userId);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<RecruiterWithoutPasswordDto>> getAllUsers() {
+    public ResponseEntity<List<RecruiterWithoutPasswordDto>> getAllRecruiters() {
         return ResponseEntity.status(HttpStatus.OK).body(recruiterService.getAllRecruiters());
     }
 }

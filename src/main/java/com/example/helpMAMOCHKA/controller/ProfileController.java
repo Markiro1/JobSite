@@ -20,7 +20,7 @@ public class ProfileController {
     private final ProfileService profileService;
 
     @PostMapping("/createProfile")
-    public ResponseEntity<Profile> signUp(@Valid @RequestBody ProfileDto dto) {
+    public ResponseEntity<Profile> createProfile(@Valid @RequestBody ProfileDto dto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(profileService.save(dto));
     }
 
@@ -30,7 +30,7 @@ public class ProfileController {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<Object> deleteUserById(@PathVariable(value = "id") Long userId) {
+    public ResponseEntity<Object> deleteUserProfileById(@PathVariable(value = "id") Long userId) {
         profileService.deleteById(userId);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

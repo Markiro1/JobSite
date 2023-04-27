@@ -30,13 +30,13 @@ public class VacationController {
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public ResponseEntity<Object> deleteUserById(@PathVariable(value = "id") Long userId) {
+    public ResponseEntity<Object> deleteVacationById(@PathVariable(value = "id") Long userId) {
         vacationService.deleteById(userId);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<VacationDto>> getAllUsers() {
+    public ResponseEntity<List<VacationDto>> getAllVacations() {
         return ResponseEntity.status(HttpStatus.OK).body(vacationService.getAllVacations());
     }
 }
