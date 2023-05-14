@@ -9,6 +9,7 @@ import lombok.Builder;
 
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -37,7 +38,7 @@ public class User extends BaseEntity {
     }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
-    private List<Response> responses;
+    private List<Response> responses = new ArrayList<>();
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.PERSIST)
     private Profile profile;
