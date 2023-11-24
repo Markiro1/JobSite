@@ -1,11 +1,11 @@
 package controllers;
 
-import com.example.helpMAMOCHKA.controller.ProfileController;
-import com.example.helpMAMOCHKA.dto.profile.ProfileDto;
-import com.example.helpMAMOCHKA.entity.Profile;
-import com.example.helpMAMOCHKA.enums.Position;
-import com.example.helpMAMOCHKA.enums.Specialization;
-import com.example.helpMAMOCHKA.service.ProfileService;
+import com.example.jobSite.controller.ProfileController;
+import com.example.jobSite.dto.profile.ProfileDto;
+import com.example.jobSite.entity.Profile;
+import com.example.jobSite.enums.Position;
+import com.example.jobSite.enums.Specialization;
+import com.example.jobSite.service.ProfileService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.junit.Test;

@@ -1,8 +1,8 @@
 package controllers;
 
-import com.example.helpMAMOCHKA.controller.UserController;
-import com.example.helpMAMOCHKA.dto.user.UserWithoutPasswordDto;
-import com.example.helpMAMOCHKA.service.UserService;
+import com.example.jobSite.controller.UserController;
+import com.example.jobSite.dto.user.UserWithoutPasswordDto;
+import com.example.jobSite.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

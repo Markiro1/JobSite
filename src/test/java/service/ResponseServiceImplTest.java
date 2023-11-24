@@ -1,13 +1,13 @@
 package service;
 
-import com.example.helpMAMOCHKA.dto.response.ResponseDto;
-import com.example.helpMAMOCHKA.entity.Response;
-import com.example.helpMAMOCHKA.entity.User;
-import com.example.helpMAMOCHKA.entity.Vacation;
-import com.example.helpMAMOCHKA.repository.ResponseRepo;
-import com.example.helpMAMOCHKA.repository.UserRepo;
-import com.example.helpMAMOCHKA.repository.VacationRepo;
-import com.example.helpMAMOCHKA.service.impl.ResponseServiceImpl;
+import com.example.jobSite.dto.response.ResponseDto;
+import com.example.jobSite.entity.Response;
+import com.example.jobSite.entity.User;
+import com.example.jobSite.entity.Vacation;
+import com.example.jobSite.repository.ResponseRepo;
+import com.example.jobSite.repository.UserRepo;
+import com.example.jobSite.repository.VacationRepo;
+import com.example.jobSite.service.impl.ResponseServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,10 +1,10 @@
 package service;
 
-import com.example.helpMAMOCHKA.dto.recruiter.RecruiterDto;
-import com.example.helpMAMOCHKA.dto.recruiter.RecruiterWithoutPasswordDto;
-import com.example.helpMAMOCHKA.entity.Recruiter;
-import com.example.helpMAMOCHKA.repository.RecruiterRepo;
-import com.example.helpMAMOCHKA.service.impl.RecruiterServiceImpl;
+import com.example.jobSite.dto.recruiter.RecruiterDto;
+import com.example.jobSite.dto.recruiter.RecruiterWithoutPasswordDto;
+import com.example.jobSite.entity.Recruiter;
+import com.example.jobSite.repository.RecruiterRepo;
+import com.example.jobSite.service.impl.RecruiterServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -1,14 +1,14 @@
 package service;
 
-import com.example.helpMAMOCHKA.dto.profile.ProfileDto;
-import com.example.helpMAMOCHKA.entity.Profile;
-import com.example.helpMAMOCHKA.entity.User;
-import com.example.helpMAMOCHKA.enums.English;
-import com.example.helpMAMOCHKA.enums.Position;
-import com.example.helpMAMOCHKA.enums.Specialization;
-import com.example.helpMAMOCHKA.repository.ProfileRepo;
-import com.example.helpMAMOCHKA.repository.UserRepo;
-import com.example.helpMAMOCHKA.service.impl.ProfileServiceImpl;
+import com.example.jobSite.dto.profile.ProfileDto;
+import com.example.jobSite.entity.Profile;
+import com.example.jobSite.entity.User;
+import com.example.jobSite.enums.English;
+import com.example.jobSite.enums.Position;
+import com.example.jobSite.enums.Specialization;
+import com.example.jobSite.repository.ProfileRepo;
+import com.example.jobSite.repository.UserRepo;
+import com.example.jobSite.service.impl.ProfileServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
